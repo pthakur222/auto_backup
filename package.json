@@ -1,0 +1,19 @@
+{
+  "name": "auto_backup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^2.1.1",
+    "fs": "0.0.1-security",
+    "ftp": "^0.3.10",
+    "node-zip": "^1.1.1",
+    "zip": "^1.2.0",
+    "zip-folder": "^1.0.0"
+  }
+}
