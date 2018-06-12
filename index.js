@@ -1,34 +1,22 @@
-var Client = require('ftp');
-var zipFolder = require('zip-folder');
-var c = new Client();
+var download = require('download-file')
+var request=require("request");
 
-  // connect to localhost:21 as anonymous
-  c.connect({
-    host: 'ftp.priyankathakur.in',
-    port: 21,
-    user: 'priyankathakur@priyankathakur.in',
-    password: 'pS@myal851'
-});
 
-c.on('ready', function() {
-  // c.list(function(err, list) {
-  //   if (err) throw err;
-  //   list.forEach(function(data){
-  //     console.log("data value");
-  //     console.log(data);
-  //   })
-    c.cwd("/",function(err,currentDir){
-      console.log("directory");
-      console.log(currentDir);
+var url = "http://priyankathakur.in/archive.zip"
 
-      // zipFolder(cwd, 'archive.zip', function(err) {
-      //       if(err) {
-      //           console.log('oh no!', err);
-      //       } else {
-      //           console.log('EXCELLENT');
-      //       }
-      //   });
+var options = {
+    directory: "zipfolder",
+    filename: "archive.zip"
+}
 
-     })
-    c.end();
+request.get("http://priyankathakur.in/zip.php",function(error,response,body){
+           if(error){
+                 console.log(error);
+           }else{
+
+             download(url, options, function(err){
+                 if (err) throw err
+                 console.log("meow")
+             })
+         }
 });

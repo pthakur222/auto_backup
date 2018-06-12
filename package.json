@@ -10,9 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "archiver": "^2.1.1",
+    "download-file": "^0.1.5",
     "fs": "0.0.1-security",
     "ftp": "^0.3.10",
     "node-zip": "^1.1.1",
+    "openurl": "^1.1.1",
+    "request": "^2.87.0",
     "zip": "^1.2.0",
     "zip-folder": "^1.0.0"
   }
